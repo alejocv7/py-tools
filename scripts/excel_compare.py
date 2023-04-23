@@ -148,7 +148,3 @@ class ExcelCompare:
             excel_writer, sheet_name=worksheet.name, startrow=worksheet.dim_rowmax + 1
         )
         worksheet.dim_rowmax += 2
-
-
-excel_cmp = ExcelCompare("scripts/old.xlsx", "scripts/new.xlsx")
-excel_cmp.write_to_excel()
