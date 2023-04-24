@@ -27,18 +27,6 @@ class ExcelCompare:
         self.old_excel = pd.read_excel(self.old_file_path, sheet_name=None)
         self.new_excel = pd.read_excel(self.new_file_path, sheet_name=None)
 
-        # self.temp_compare()
-
-    def temp_compare(self) -> None:
-        self.old_file = pd.read_excel(self.old_file_path, sheet_name=None)
-        self.new_file = pd.read_excel(self.new_file_path, sheet_name=None)
-
-        for sheet_old, sheet_new in zip(self.old_file, self.new_file):
-            df_old = self.old_file[sheet_old]
-            df_new = self.new_file[sheet_new]
-            difference = df_old[df_old != df_new]
-            print(difference)
-
     def get_excel_diff(self) -> dict[str | int, dict[str, pd.DataFrame]]:
         excel_diff: dict[str | int, dict[str, pd.DataFrame]] = {}
 
